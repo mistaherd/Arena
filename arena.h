@@ -16,6 +16,7 @@ void *free_arena(Arena *arena);
 #endif // ARENA_H
 #ifdef ARENA_IMPLEMENTATION
 Arena *arena_init(size_t size){
+    if (size==0) return NULL;
     Arena *arena=malloc(sizeof(Arena));
     if (!arena) return NULL;
     
